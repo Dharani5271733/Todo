@@ -48,7 +48,7 @@ function Login() {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/login', { email, password })
+        axios.post(`${import.meta.env.VITE_API_URL}/login`, { email, password })
             .then(res => {
                 alert(res.data.message);
                 localStorage.setItem('user', JSON.stringify(res.data.user));

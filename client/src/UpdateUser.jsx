@@ -8,7 +8,7 @@ function UpdateUser(){
     const navigate=useNavigate()
 
     useEffect(()=>{
-            axios.get('http://localhost:3001/getUser/'+id)
+            axios.get(`${import.meta.env.VITE_API_URL}/getUser/${id}`)
             .then(result=>{console.log(result)
             setName(result.data.name)
             setEmail(result.data.email)
@@ -20,7 +20,7 @@ function UpdateUser(){
         },[])
    const Update=(e) =>{
     e.preventDefault();
-    axios.put("http://localhost:3001/updateUser/"+id,{name,email})
+    axios.put(`${import.meta.env.VITE_API_URL}/updateUser/${id}`, { name, email })
     .then(result =>{
         console.log(result)
         navigate('/users')

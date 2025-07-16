@@ -9,13 +9,13 @@ function Users() {
 
     useEffect(() => {
         setIsLoggedIn(!!localStorage.getItem('user'));
-        axios.get('http://localhost:3001')
+        axios.get(`${import.meta.env.VITE_API_URL}/`)
             .then(result => setUsers(result.data))
             .catch(err => console.log(err));
     }, []);
 
     const handleDelete = (id) => {
-        axios.delete('http://localhost:3001/deleteUser/' + id)
+        axios.delete(`${import.meta.env.VITE_API_URL}/deleteUser/${id}`)
             .then(() => window.location.reload())
             .catch(err => console.log(err));
     };
@@ -26,19 +26,12 @@ function Users() {
         navigate('/');
     };
 
-
     return (
         <div className="d-flex vh-100 justify-content-center align-items-center" style={{ background: "linear-gradient(135deg, #6fb1fc, #4364f7)" }}>
             <div className='w-75 bg-white rounded p-4 shadow'>
                 <div className="d-flex justify-content-between mb-3">
                     <h2 className="text-primary">User Management</h2>
                     <div>
-                        {/* {!isLoggedIn && (
-                            <>
-                                <Link to="/login" className="btn btn-outline-primary me-2">Login</Link>
-                                <Link to="/register" className="btn btn-outline-secondary me-2">Register</Link>
-                            </>
-                        )} */}
                         {isLoggedIn && (
                             <>
                                 <button className="btn btn-danger me-2" onClick={handleLogout}>Logout</button>

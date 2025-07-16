@@ -10,7 +10,8 @@ function Register() {
 
     const handleRegister = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/register', { name, email, password })
+        axios.post(`${import.meta.env.VITE_API_URL}/register`, { name, email, password })
+
             .then(res => {
                 alert("Registration successful");
                 navigate('/login');
