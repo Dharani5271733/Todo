@@ -14,7 +14,7 @@ function Home() {
   return (
     <div className="d-flex vh-100 bg-light justify-content-center align-items-center">
       <div className="text-center">
-        <h2 className="mb-4">Welcome to MERN User Management</h2>
+        <h2 className="mb-4">Welcome to Todo Management</h2>
         <Link to="/login" className="btn btn-primary me-3">Login</Link>
         <Link to="/register" className="btn btn-secondary">Register</Link>
       </div>

@@ -30,7 +30,7 @@ function Users() {
         <div className="d-flex vh-100 justify-content-center align-items-center" style={{ background: "linear-gradient(135deg, #6fb1fc, #4364f7)" }}>
             <div className='w-75 bg-white rounded p-4 shadow'>
                 <div className="d-flex justify-content-between mb-3">
-                    <h2 className="text-primary">User Management</h2>
+                    <h2 className="text-primary">Todo Management</h2>
                     <div>
                         {isLoggedIn && (
                             <>
